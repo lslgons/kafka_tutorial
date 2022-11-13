@@ -9,23 +9,8 @@ import java.util.Properties;
 public class Main {
     public static void main(String[] args) {
         System.out.println("====> Start Kafka Producer Tutorial");
-        Properties props=new Properties();
-        props.put("bootstrap.servers", "peter-kafka01.foo.bar:9092,peter-kafka02.foo.bar:9092,peter-kafka03.foo.bar:9092");
-        props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
-        props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
+        KafkaProducerNoACK.main(args);
 
-        Producer<String, String> producer=new KafkaProducer<>(props);
-        try {
-            for(int i=0; i<3; ++i) {
-                ProducerRecord<String, String> record=new ProducerRecord<>("peter-basic01",
-                        "Apache Kafka is a distributed streaming platform - "+i);
-                producer.send(record);
-            }
-        } catch(Exception e) {
-            e.printStackTrace();
-        } finally {
-            producer.close();
-        }
         System.out.println("====> End Kafka Producer Tutorial");
 
     }
