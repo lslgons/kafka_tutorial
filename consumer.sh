@@ -1,2 +1,2 @@
 #!/bin/bash
-mvn exec:java@consumer
+mvn exec:java -Dexec.mainClass="com.dizzy.KafkaConsumerAuto"
