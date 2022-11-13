@@ -9,7 +9,8 @@ import java.util.Properties;
 public class Main {
     public static void main(String[] args) {
         System.out.println("====> Start Kafka Producer Tutorial");
-        KafkaProducerNoACK.main(args);
+        //KafkaProducerNoACK.main(args);
+        KafkaProducerSync.main(args);
 
         System.out.println("====> End Kafka Producer Tutorial");
 
