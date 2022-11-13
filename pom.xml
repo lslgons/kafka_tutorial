@@ -34,9 +34,27 @@
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>3.0.0</version>
-                <configuration>
-                    <mainClass>com.dizzy.Main</mainClass>
-                </configuration>
+                <executions>
+                    <execution>
+                        <id>producer</id>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                        <configuration>
+                            <mainClass>com.dizzy.Main</mainClass>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>consumer</id>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                        <configuration>
+                            <mainClass>com.dizzy.KafkaConsumerAuto</mainClass>
+                        </configuration>
+                    </execution>
+                </executions>
+
             </plugin>
         </plugins>
     </build>
